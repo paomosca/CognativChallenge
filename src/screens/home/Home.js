@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, StyleSheet, View, FlatList, TouchableOpacity, SafeAreaView, Image, ScrollView } from "react-native";
+import { Text, StyleSheet, View, FlatList, TouchableOpacity, SafeAreaView, Image, ScrollView, StatusBar } from "react-native";
 
 import Colors from "../../theme/Colors";
 import Metrics from "../../theme/Metrics";
@@ -300,6 +300,7 @@ class ExploreScreen extends Component {
   render() {
     return (
     <SafeAreaView style={styles.mainScreen}>
+      <StatusBar barStyle="dark-content" />
         <View style={styles.navBar}>
           <View style={styles.titleWrapper}>
             <Text style={styles.title}>Recipes</Text>

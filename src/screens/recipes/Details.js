@@ -38,7 +38,7 @@ export default class RecipeDetails extends Component {
 
     return (
       <SafeAreaView style={styles.mainScreen}>
-        <StatusBar barStyle="light-content" />
+        <StatusBar barStyle="dark-content" />
         <View style={styles.container}>
           <ScrollView showsVerticalScrollIndicator={false}>
             <View style={styles.imageContainer}>

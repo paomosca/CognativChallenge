@@ -6,10 +6,6 @@ React Native challenge for Cognativ
 ## About
 
 This project is a very basic project used to evaluate your approach on re-order y refactor of javascript code and your basic knowledge in React Native
-
-<img src="https://github.com/paomosca/CognativChallenge/blob/main/images/Home.png?raw=true" alt="Home" title="Home" width="200" height="433" />
-<img src="https://github.com/paomosca/CognativChallenge/blob/main/images/Details.png?raw=true" alt="Details" title="Details" width="200" height="433" />
-
 ## Required tasks
 
 * Run the app correctly on both iOS & Android environment
@@ -21,5 +17,12 @@ This project is a very basic project used to evaluate your approach on re-order 
 
 ## Nice to have
 
-* Write down some unit tests to achieve coding coverage > 70% 
+* Write down some unit tests to achieve coding coverage > 70%
 * Reorganize your code to use a state manager (MobX & Recoil will be preferred but Redux or other alternatives will be considered valid, but please Keep It Stupid Simple)
+
+## What you should expect?
+
+<div style="float:left;margin:0 10px 10px 0" markdown="1">
+    <img src="https://github.com/paomosca/CognativChallenge/blob/main/images/Home.png?raw=true" alt="Home" title="Home" width="200" height="433" />
+    <img src="https://github.com/paomosca/CognativChallenge/blob/main/images/Details.png?raw=true" alt="Details" title="Details" width="200" height="433" />
+</div>
