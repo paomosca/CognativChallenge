@@ -17,6 +17,7 @@ This project is a very basic project used to evaluate your approach on re-order 
 
 ## Nice to have
 
+* Convert the JS files to TypeScript and create the correct interfaces
 * Write down some unit tests to achieve coding coverage > 70%
 * Reorganize your code to use a state manager (MobX & Recoil will be preferred but Redux or other alternatives will be considered valid, but please Keep It Stupid Simple)
 
