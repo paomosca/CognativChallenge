@@ -2,9 +2,13 @@
 
 React Native challenge for Cognativ
 
+
 ## About
 
 This project is a very basic project used to evaluate your approach on re-order y refactor of javascript code and your basic knowledge in React Native
+
+<img src="https://github.com/paomosca/CognativChallenge/blob/main/images/Home.png?raw=true" alt="Home" title="Home" width="200" height="433" />
+<img src="https://github.com/paomosca/CognativChallenge/blob/main/images/Details.png?raw=true" alt="Details" title="Details" width="200" height="433" />
 
 ## Required tasks
 
