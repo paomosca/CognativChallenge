@@ -13,7 +13,7 @@ This project is a very basic project used to evaluate your approach on re-order 
 * Configure the navigation to support List of recipes (Home) -> Recipe details (Details), navigating one to the other
 * Re-write the 2 class component (Home & Details) as funcional components and move the lifecycle logic to appropriates hooks (if needed)
 * Re-organize the code of the 2 screens in a more appropiate and readable way, following YOUR OWN criteria. 
-* Connect to the api: https://virated-api.herokuapp.com/recipes instead of the fake data (for example using axios)
+* Connect to the api: https://virated-api.herokuapp.com/recipes for recipes and https://virated-api.herokuapp.com/recipes?recommended=1 for recommended dishes instead of the fake data (for example using axios)
 
 ## Nice to have
 
