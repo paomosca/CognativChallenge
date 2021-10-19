@@ -2,17 +2,17 @@
 
 React Native challenge for Cognativ
 
-
 ## About
 
-This project is a very basic project used to evaluate your approach on re-order y refactor of javascript code and your basic knowledge in React Native
+This project is used to evaluate your approach on re-order y refactor of javascript code and your basic knowledge in React Native, take it easy.
+
 ## Required tasks
 
 * Run the app correctly on both iOS & Android environment
 * Install react-navigation
 * Configure the navigation to support List of recipes (Home) -> Recipe details (Details), navigating one to the other
-* Re-write the 2 class component (Home & Details) as funcional components and move the lifecycle logic to appropriates hooks (if needed)
-* Re-organize the code of the 2 screens in a more appropiate and readable way, following YOUR OWN criteria. 
+* Re-write the 2 class component (Home & Details) as functional components and move the lifecycle logic to appropriates hooks (if needed)
+* Re-organize the code of the 2 screens in a more appropriate and readable way, following YOUR OWN criteria.
 * Connect to the api: https://virated-api.herokuapp.com/recipes for recipes and https://virated-api.herokuapp.com/recipes?recommended=1 for recommended dishes instead of the fake data (for example using axios)
 
 ## Nice to have
