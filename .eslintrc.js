@@ -17,11 +17,28 @@ module.exports = {
     ],
     "no-use-before-define": ["off"],
     "no-console": ["error", { allow: ["warn", "error"]}],
-    "@typescript-eslint/interface-name-prefix": ["warn"],
     "@typescript-eslint/no-use-before-define": ["off"],
+      "@typescript-eslint/naming-convention": [
+        "error",
+        {
+          "selector": "interface",
+          "format": ["PascalCase"],
+          "custom": {
+            "regex": "^I[A-Z]",
+            "match": false,
+          },
+        },
+      ],
+      "@typescript-eslint/naming-convention": [
+        "error",
+        {
+          "selector": ["variable", "function"],
+          "format": ["camelCase"],
+          "leadingUnderscore": "allow",
+        },
+      ],
     "@typescript-eslint/no-var-requires": ["warn"],
     "@typescript-eslint/no-empty-function": ["warn"],
-    "@typescript-eslint/camelcase": ["warn"],
     "@typescript-eslint/no-empty-interface": ["warn"],
     "react-native/no-inline-styles": ["error"],
     "react-native/no-raw-text": ["warn"],
