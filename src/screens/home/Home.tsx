@@ -1,18 +1,16 @@
+
 import React, { Component } from "react";
 import styles from "./homeStyles";
 import {
   Text,
   View,
   FlatList,
-  TouchableOpacity,
   SafeAreaView,
-  Image,
-  ScrollView,
   StatusBar,
 } from "react-native";
-import { renderRecipe, Recipe } from "../../types/interface";
+import { renderColumn } from "../../types/interface";
 import Recommended from "../../components/recommended/Recommended";
-import Row from "../../components/row/Row";
+import Column from "../../components/column/Column";
 
 const fakeRecipes = [
   {
@@ -158,16 +156,9 @@ const fakeRecipes = [
   },
 ];
 
-export default function Home() {
-  const PLACEHOLDER = "http://via.placeholder.com/640x360";
-  const renderImage = (item: Recipe) => {
-    const imageUrl = (item && item.photo) ? item.photo : PLACEHOLDER;
-    return (<Image source={{ uri: imageUrl }} style={styles.recipeImage} />);
-  };
-
-  const renderRow = ({ item }: renderRecipe) => <Row />;
-
+const Home: React.FC<any> = () => {
   const renderRecommended = () => <Recommended/>;
+  const renderColumn = ({ item }: renderColumn) => <Column />;
   return (
     <SafeAreaView style={styles.mainScreen}>
       <StatusBar barStyle="dark-content" />
@@ -177,8 +168,8 @@ export default function Home() {
       <View style={styles.container}>
         <FlatList
           data={fakeRecipes}
-          renderItem={renderRow}
           ListHeaderComponent={renderRecommended}
+          renderItem={renderColumn}
           showsVerticalScrollIndicator={false}
         />
       </View>
@@ -186,3 +177,4 @@ export default function Home() {
   );
 }
 
+export default Home;

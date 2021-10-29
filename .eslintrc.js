@@ -31,7 +31,7 @@ module.exports = {
     "react-native/no-color-literals": ["warn"],
     "react-native/no-unused-styles": ["warn"],
     "comma-dangle": ["error", "always-multiline"],
-    quotes: ["error", "double", { allowTemplateLiterals: true }],
+    "@typescript-eslint/no-unused-vars": ["off"],
   },
   env: {
     es6: true,
