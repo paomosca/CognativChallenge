@@ -16,6 +16,7 @@ module.exports = {
       "always",
       { arraysInObjects: false, objectsInObjects: false },
     ],
+    "@typescript-eslint/no-explicit-any": "off",
     "no-use-before-define": ["off"],
     "no-console": ["error", { allow: ["warn", "error"]}],
     "@typescript-eslint/no-use-before-define": ["off"],
