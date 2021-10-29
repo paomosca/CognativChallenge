@@ -1,13 +1,14 @@
+/* eslint-disable no-console */
 import React from "react";
 import { Text, View, TouchableOpacity, Image } from "react-native";
 import styles from "../../screens/home/homeStyles";
-import { Recipe } from "../../types/interface";
+import imageUrl from "../../utils/imageUrl";
+import { RenderColumn, Recipe } from "../../types/interface";
 
-const Row: React.FC<any> = (item: Recipe) => {
-  const PLACEHOLDER = "http://via.placeholder.com/640x360";
-  const imageUrl = (item: Recipe) => {return (item && item.photo) ? item.photo : PLACEHOLDER}
+const Row: React.FC<any> = ({ item }: RenderColumn) => {
   const renderImage = (item: Recipe) => (
-    <Image source={{ uri: imageUrl(item) }} style={styles.recipeImage} />);
+    <Image source={{ uri: imageUrl(item) }} style={styles.recipeImage}/>
+  );
   return (
     <TouchableOpacity>
       <View style={styles.rowContainer}>

@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-
 import React, { Suspense } from "react";
 import { useRecoilValue } from 'recoil';
 import {
@@ -9,8 +7,8 @@ import {
   SafeAreaView,
   StatusBar,
 } from "react-native";
-import renderRecipe from '../../recoil/actions/recipeCreator';
-import { renderColumn, Recipe } from "../../types/interface";
+import renderRecipe from '../../recoil/actions/recipeCreators';
+import { RenderColumn } from "../../types/interface";
 import Recommended from "../../components/recommended/Recommended";
 import Column from "../../components/column/Column";
 import styles from "./homeStyles";
@@ -18,7 +16,7 @@ import styles from "./homeStyles";
 const Home: React.FC<any> = () => {
   const realRecipes = useRecoilValue(renderRecipe);
   const renderRecommended = () => <Recommended/>;
-  const renderColumn = ({ item }: renderColumn) => <Column />;
+  const RenderColumn = ({ item }: RenderColumn) => <Column item={item} />;
   return (
     <SafeAreaView style={styles.mainScreen}>
       <StatusBar barStyle="dark-content" />
@@ -30,7 +28,7 @@ const Home: React.FC<any> = () => {
           data={realRecipes}
           ListHeaderComponent={renderRecommended}
           keyExtractor={({ _id }) => _id}
-          renderItem={renderColumn}
+          renderItem={RenderColumn}
           showsVerticalScrollIndicator={false}
         />
       </View>

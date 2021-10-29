@@ -13,7 +13,7 @@ export interface Recipe {
     favorite?: number,
 }
 
-export interface renderColumn {
+export interface RenderColumn {
     item: Recipe,
 }
 
