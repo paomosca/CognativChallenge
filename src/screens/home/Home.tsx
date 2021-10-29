@@ -7,7 +7,7 @@ import {
   SafeAreaView,
   StatusBar,
 } from "react-native";
-import renderRecipe from '../../recoil/actions/recipeCreators';
+import renderRecipe from '../../recoil/actions/recipeCreator';
 import { RenderColumn } from "../../types/interface";
 import Recommended from "../../components/recommended/Recommended";
 import Column from "../../components/column/Column";
