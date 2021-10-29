@@ -1,6 +1,16 @@
 import React, { Component } from "react";
-import { Text, View, FlatList, TouchableOpacity, SafeAreaView, Image, ScrollView, StatusBar } from "react-native";
 import styles from "./homeStyles";
+import {
+  Text,
+  View,
+  FlatList,
+  TouchableOpacity,
+  SafeAreaView,
+  Image,
+  ScrollView,
+  StatusBar,
+} from "react-native";
+
 const recommendations = [
   {
     "_id": "52944",
@@ -217,16 +227,16 @@ const fakeRecipes = [
   },
 ];
 
-class ExploreScreen extends Component {
+export default function Home() {
   
-  renderImage = (item) => {
+  const renderImage = (item) => {
     let imageUrl = "http://via.placeholder.com/640x360";
     if (item && item.photo) {
       imageUrl = item.photo;
     }
     return <Image source={{ uri: imageUrl }} style={styles.recipeImage} />;
   };
-  renderImageBox = (item) => {
+  const renderImageBox = (item) => {
     let imageUrl = "http://via.placeholder.com/640x360";
     if (item && item.photo) {
       imageUrl = item.photo;
@@ -234,80 +244,65 @@ class ExploreScreen extends Component {
     return <Image source={{ uri: imageUrl }} style={styles.scrollerRecipe} />;
   };
 
-  renderRow = ({ item }) => {
-    return (
-      <TouchableOpacity onPress={this.onPress}>
-        <View style={styles.rowContainer}>
-          <View style={styles.imageContainer}>{this.renderImage(item)}</View>
-          <View style={styles.infoContainer}>
-            <Text style={styles.categoryRow}>{item.categoryName}</Text>
-            <Text style={styles.titleRow}>{item.name}</Text>
-            <View style={styles.properties}>
-              <View style={styles.cellRow}>
-                <Text style={styles.cellText}>{item.duration} minutes</Text>
-              </View>
-              <View style={styles.cellRow}>
-                <Text style={styles.cellText}>{item.complexity}</Text>
-              </View>
-              <View style={styles.cellRow}>
-                <Text style={styles.cellText}>{item.people} people</Text>
-              </View>
+  const renderRow = ({ item }) => (
+    <TouchableOpacity onPress={this.onPress}>
+      <View style={styles.rowContainer}>
+        <View style={styles.imageContainer}>{renderImage(item)}</View>
+        <View style={styles.infoContainer}>
+          <Text style={styles.categoryRow}>{item.categoryName}</Text>
+          <Text style={styles.titleRow}>{item.name}</Text>
+          <View style={styles.properties}>
+            <View style={styles.cellRow}>
+              <Text style={styles.cellText}>{item.duration} minutes</Text>
+            </View>
+            <View style={styles.cellRow}>
+              <Text style={styles.cellText}>{item.complexity}</Text>
+            </View>
+            <View style={styles.cellRow}>
+              <Text style={styles.cellText}>{item.people} people</Text>
             </View>
           </View>
         </View>
-      </TouchableOpacity>
-    )
-  };
-
-  keyExtractor = (item) => item._id;
-
-  renderList = () => {
-    return (
-      <FlatList
-        ListHeaderComponent={this.renderRecommended}
-        showsVerticalScrollIndicator={false}
-        keyExtractor={this.keyExtractor}
-        data={fakeRecipes}
-        renderItem={this.renderRow}
-      />
-    );
-  };
-
-  renderRecommended = () => {
-    return (
-      <View style={styles.recommendedContainer}>
-        <Text style={styles.header}>Recommended</Text>
-        <ScrollView
-          horizontal={true}
-          showsVerticalScrollIndicator={false}
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.scroller}
-        >
-          {recommendations.map(item => {
-            return (
-              <TouchableOpacity onPress={this.onPress}>
-                <View style={styles.recipeImageBox}>{this.renderImageBox(item)}</View>
-              </TouchableOpacity>
-            )
-          })}
-        </ScrollView>
       </View>
-    )
-  };
-  render() {
-    return (
-      <SafeAreaView style={styles.mainScreen}>
-        <StatusBar barStyle="dark-content" />
-        <View style={styles.navBar}>
-          <View style={styles.titleWrapper}>
-            <Text style={styles.title}>Recipes</Text>
-          </View>
-        </View>
-        <View style={styles.container}>{this.renderList()}</View>
-      </SafeAreaView>
+    </TouchableOpacity>
+  );
 
-    );
-  }
+  const renderRecommended = () => (
+    <View style={styles.recommendedContainer}>
+      <Text style={styles.header}>Recommended</Text>
+      <ScrollView
+        horizontal={true}
+        showsVerticalScrollIndicator={false}
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={styles.scroller}
+      >
+        {recommendations.map(item => (
+          <TouchableOpacity onPress={this.onPress}>
+            <View style={styles.recipeImageBox}>{renderImageBox(item)}</View>
+          </TouchableOpacity>
+        ),
+        )}
+      </ScrollView>
+    </View>
+  );
+
+  return (
+    <SafeAreaView style={styles.mainScreen}>
+      <StatusBar barStyle="dark-content" />
+      <View style={styles.navBar}>
+        <View style={styles.titleWrapper}>
+          <Text style={styles.title}>Recipes</Text>
+        </View>
+      </View>
+      <View style={styles.container}>
+        <FlatList
+          data={fakeRecipes}
+          renderItem={renderRow}
+          ListHeaderComponent={renderRecommended}
+          showsVerticalScrollIndicator={false}
+        />
+      </View>
+    </SafeAreaView>
+  );
 }
-export default ExploreScreen;
 

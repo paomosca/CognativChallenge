@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import styles from "./detailsStyles";
 import {
   Text,
   View,
@@ -7,7 +8,6 @@ import {
   SafeAreaView,
   StatusBar,
 } from "react-native";
-import styles from "./detailsStyles";
 
 const data = {
   "_id": "52944",
