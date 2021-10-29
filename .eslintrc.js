@@ -8,6 +8,7 @@ module.exports = {
     sourceType: "module",
   },
   rules: {
+    "indent": ["error", 2],
     "no-multi-spaces": ["error"],
     "no-multiple-empty-lines": ["error", { max: 1 }],
     "object-curly-spacing": [
